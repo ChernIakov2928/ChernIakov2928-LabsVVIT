@@ -1,32 +1,21 @@
-##Задание 1
+#Задание 1
 class UserAccount:
-    def __init__(self, username, email, password):
+    def __init__(self, username: str, email: str, password: str):
         self.username = username
         self.email = email
         self.__password = password
 
-    def set_password(self, new_password):
+    def set_password(self, new_password: str) -> None:
         self.__password = new_password
-        return f"Пароль успешно изменен"
 
-    def check_password(self, password):
-        return password == self.__password
+    def check_password(self, password: str) -> bool:
+        return self.__password == password
 
-    def get_account_info(self):
-        return f"Username: {self.username}, Email: {self.email} Password: {self.__password}"
-
-user1 = UserAccount("mail", "email", "password")
-
-user_input = input("Введите пароль для проверки: ")
-if user1.check_password(user_input):
-    print("Пароль верный")
-else:
-    print("Неверный пароль")
-print(user1.get_account_info())
-
-
-print(user1.email)
-print(user1.__password)
+user = UserAccount("Chern", "nalkabbaklan@gmail.com", "12315401")
+print(user.check_password("12315401"))  # True
+user.set_password("cherN")
+print(user.check_password("12315401"))  # False
+print(user.check_password("cherN"))  # True
 
 #Задание 2
 class Vehicle:
