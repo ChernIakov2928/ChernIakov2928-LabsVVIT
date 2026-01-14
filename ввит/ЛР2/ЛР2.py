@@ -1,10 +1,8 @@
 #Задание 1
 def greet(name):
-    return name
-
-person = str(input("Как вас зовут?: "))
-result = greet(person)
-print("Привет, ", result)
+    return f"Привет, {name}!"
+name = input("Введите имя ")
+print(greet(name))
 
 ##Задание 2
 def square(number):
@@ -33,23 +31,18 @@ print("Наибольшее число: ", resulttt)
 ##Задание 4
 def describe_person(name, age=30):
     return(f"{name}, {age}")
-person = str(input("Введите ваше имя: "))
-opt = str(input('хотите ли ввести возраст? (да/нет?)'))
-if opt == 'да':
-    years = str(input("Введите ваш возраст: "))
-    describe_person(person, years)
+
+user_name = input("Введите ваше имя: ")
+user_age = input("Введите ваш возраст: ")
+if user_age:
+    print(describe_person(user_name, user_age))
 else:
-        describe_person(person)
-    
-person = input()
-age = input()
-if age:
-    print(describe_person(person, age))
-else:
-    print(describe_person(person))
+    print(describe_person(user_name))
+
+    print("Имя:", user_name)
+    print("Возраст:", user_age)
 
 ##Задание 5
-#Задание 5
 def is_prime(number):
     if number == 2 or number == 3 or number == 5 or number == 7:
         return True
